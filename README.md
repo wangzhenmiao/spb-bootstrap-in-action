@@ -48,7 +48,18 @@ modelObject:是关联数据库等，取到的数据源
 
     <tr th:if="${userModel.userList.size()} eq 0">
             <td colspan="3">没有用户信息！</td>
-        </tr>
+    </tr>
 
+代码分析：
+
+a)model中list的size调用：${userModel.userList.size()}
+
+b) th:if=" 变量 eq 0" : if 的判断
+
+c) 神句：<tr th:if="${userModel.userList.size()} eq 0">
+
+d) 如果为真，才显示 “没有用户信息” 的文本
+
+5、
 
 二、HelloController是学习类，学习Model和ModelAndView的。
