@@ -74,8 +74,15 @@ b) td中，套用 a 标签
 
 a标签中，th:href 写 controller 中的地址，th:text 是显示的文本
 
+6、controller中，接收url中的参数
+
+@GetMapping("{id}")
+    public ModelAndView view(@PathVariable("id") Long id, Model model)
+    
+1、@GetMapping("{id}"),get请求，具体url为：/users/id,其中uers是类映射，@RequestMapping("/users")中提供的
+
+2、@PathVariable("id") Long id ，表示参数为id
 
 
-b) 
 
 二、HelloController是学习类，学习Model和ModelAndView的。
