@@ -28,12 +28,22 @@ th:href="@{/users/form}：指向controller中的 /users/form 地址了
 
 3、controller中model传递数据，view传递html页面路径
 
-   @GetMapping
-    public ModelAndView list(Model model) {
-        model.addAttribute("userList", userRepository.findAll());
-        model.addAttribute("title", "用户管理");
-        return new ModelAndView("users/list","userModel",model);
-    }
-    
+a)代码片段：return new ModelAndView("users/list","userModel",model);
+
+b)构造函数：public ModelAndView(String viewName, String modelName, Object modelObject)
+
+c)具体参数含义：
+
+viewName:是templates下对应的html文件，全路径为：templates/users/list.html
+
+modeName:是对应html页面中，可以用 ${modelName} 来取值的
+
+   比如：list.html页面中，通过：< 分割 h3 th:text="${userModel.title}">waylau< 分割 /h3>
+
+   用 ${userModel.title} 取值，但是还放在双引号里哎，😌
+
+modelObject:是关联数据库等，取到的数据源
+
+
 
 二、HelloController是学习类，学习Model和ModelAndView的。
