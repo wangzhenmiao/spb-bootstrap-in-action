@@ -127,4 +127,10 @@ b)路径为 /users的get和post请求的处理方式
 
 c)form.html中的from表单，提交的action路径是 users,类型是 post，所以会提交到controller中路径为users的postMapping注解下的saveOrUpdateUser方法处理 😁😁😊
 
+9、controller中的重定向
+
+ModelAndView("redirect:/users");
+
+重定向页面到list页面了，一般在添加、删除操作后执行
+
 二、HelloController是学习类，学习Model和ModelAndView的。
