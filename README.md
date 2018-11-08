@@ -77,12 +77,31 @@ a标签中，th:href 写 controller 中的地址，th:text 是显示的文本
 6、controller中，接收url中的参数
 
 @GetMapping("{id}")
+
     public ModelAndView view(@PathVariable("id") Long id, Model model)
     
 1、@GetMapping("{id}"),get请求，具体url为：/users/id,其中uers是类映射，@RequestMapping("/users")中提供的
 
 2、@PathVariable("id") Long id ，表示参数为id
 
+7、thymeleaf中的form有关标签使用
 
+    <form action="/users" th:action="@{/users}" method="POST" th:object="${userModel.user}">
+        <input type="hidden" name="id" th:value="*{id}">
+        名称：<br>
+        <input type="text" class="form-control" name="name" th:value="*{name}">
+        邮箱：<br>
+        <input type="text" class="form-control" name="email" th:value="*{email}">
+        <input type="submit" class="btn btn-default" value="提交">
+    </form>
+    
+   a) action:属性规定当提交表单时，向何处发送表单数据
+    
+   b) th:action= :定义后台控制器路径，类似<form>标签的action属性，发到users,然后呢？
+   
+   c) th:object=:用于表单数据对象绑定，将表单绑定到后台controller的一个JavaBean参数。常与th:field一起使用进行表单数据绑定
+   
+   d) th:value= :th:value="*{name}"，不知道为什么是*{name},这个form是一个编辑和添加公用的form,name是bean的属性
+   
 
 二、HelloController是学习类，学习Model和ModelAndView的。
