@@ -26,6 +26,14 @@ th:href="@{/users/form}：指向controller中的 /users/form 地址了
 
 创建用户：是btn上的文本
 
+3、controller中model传递数据，view传递html页面路径
 
+   @GetMapping
+    public ModelAndView list(Model model) {
+        model.addAttribute("userList", userRepository.findAll());
+        model.addAttribute("title", "用户管理");
+        return new ModelAndView("users/list","userModel",model);
+    }
+    
 
 二、HelloController是学习类，学习Model和ModelAndView的。
