@@ -16,6 +16,8 @@
 
 文本：< 分割 a class="btn btn-default" href="/users/form.html" th:href="@{/users/form}">创建用户< 分割 /a>
 
+（添加 “分割” 要不然看见html的代码了）
+
 class值为btn，说明是一个button
 
 href：在a标签中，href指向的是html页面
