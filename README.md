@@ -14,7 +14,7 @@
 
 2、list.html代码走读之---btn的链接及显示
 
-文本：< 分割 a class="btn btn-default" href="/users/form.html" th:href="@{/users/form}">创建用户</a>
+文本：< 分割 a class="btn btn-default" href="/users/form.html" th:href="@{/users/form}">创建用户< 分割 /a>
 
 class值为btn，说明是一个button
 
