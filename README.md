@@ -56,10 +56,26 @@ a)model中list的size调用：${userModel.userList.size()}
 
 b) th:if=" 变量 eq 0" : if 的判断
 
-c) 神句：<tr th:if="${userModel.userList.size()} eq 0">
+c) 如果为真，才显示 “没有用户信息” 的文本
 
-d) 如果为真，才显示 “没有用户信息” 的文本
+5、thymeleaf中的forearch循环，超链接
 
-5、
+    <tr th:each="user : ${userModel.userList}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.email}"></td>
+            <td ><a th:href="@{'/users/'+${user.id}}" th:text="${user.name}"></a></td>
+    </tr>
+
+a) th:each="user : ${userModel.userList}" 传递user 变量到每行
+
+td 标签中，${user.id} 可以实现遍历取值
+
+b) td中，套用 a 标签
+
+a标签中，th:href 写 controller 中的地址，th:text 是显示的文本
+
+
+
+b) 
 
 二、HelloController是学习类，学习Model和ModelAndView的。
