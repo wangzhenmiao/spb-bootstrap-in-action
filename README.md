@@ -44,6 +44,11 @@ modeName:是对应html页面中，可以用 ${modelName} 来取值的
 
 modelObject:是关联数据库等，取到的数据源
 
+4、thymeleaf 中 if 的使用，model中list的size（）应用
+
+    <tr th:if="${userModel.userList.size()} eq 0">
+            <td colspan="3">没有用户信息！</td>
+        </tr>
 
 
 二、HelloController是学习类，学习Model和ModelAndView的。
