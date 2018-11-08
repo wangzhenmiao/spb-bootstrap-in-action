@@ -97,11 +97,34 @@ a标签中，th:href 写 controller 中的地址，th:text 是显示的文本
     
    a) action:属性规定当提交表单时，向何处发送表单数据
     
-   b) th:action= :定义后台控制器路径，类似<form>标签的action属性，发到users,然后呢？
+   b) th:action= :定义后台控制器路径，类似<form>标签的action属性，发到users,表单存储见 8 😁
    
    c) th:object=:用于表单数据对象绑定，将表单绑定到后台controller的一个JavaBean参数。常与th:field一起使用进行表单数据绑定
    
    d) th:value= :th:value="*{name}"，不知道为什么是*{name},这个form是一个编辑和添加公用的form,name是bean的属性
-   
+ 
+ 8、表单的存储
+ 
+ controller中代码:
+ 
+ 类的注解：
+ 
+a) @RequestMapping("/users")
+
+表示controller的基本url是：/users
+
+b)路径为 /users的get和post请求的处理方式
+
+     @GetMapping
+    public ModelAndView list(Model model)
+    
+        @PostMapping
+    public ModelAndView saveOrUpdateUser(User user) 
+
+所以：当路径为 /users 的get请求时，调用 list 方法
+
+当路径为 /users 的post请求时，调用 saveOrUpdateUser方法
+
+c)form.html中的from表单，提交的action路径是 users,类型是 post，所以会提交到controller中路径为users的postMapping注解下的saveOrUpdateUser方法处理 😁😁😊
 
 二、HelloController是学习类，学习Model和ModelAndView的。
